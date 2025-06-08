@@ -57,3 +57,6 @@ def comparar(
             elif low <= r < high:
                 medios.append((s, h, round(r, 3)))
     return altos, medios
+
+
+python<br>if __name__ == "__main__":<br> import argparse, pathlib, json<br> p = argparse.ArgumentParser()<br> p.add_argument("svg_dir"); p.add_argument("shp")<br> args = p.parse_args()<br> hi, mid = comparar(args.svg_dir, args.shp)<br> pathlib.Path("resultados.json").write_text(json.dumps({"high": hi, "mid": mid}, indent=2))<br>
