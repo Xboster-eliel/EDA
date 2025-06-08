@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=77.0.0"]
+build-backend = "setuptools.build_meta"  # otro backend (hatchling, flit) también sirve
+
+[project]
+name = "EDA"
+version = "0.0.1"
+description = "Herramientas EDA para comparación de nombres"
+authors = [{name="Tu Nombre", email="tu@email"}]
+requires-python = ">=3.9"
+dependencies = [
+    "geopandas",
+    "rapidfuzz>=3.0",   # opción más veloz que difflib
+]
+
+python -m pip install --upgrade build
+python -m build        # genera dist/EDA-0.0.1-py3-none-any.whl
