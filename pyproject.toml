@@ -1,15 +1,39 @@
+[build-system]
+requires = ["setuptools>=67", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "EDA"
+name = "compare-names-folder-vs-shape"          # 🛈 publicado en PyPI/GitHub
 version = "0.1.0"
-description = "Librería EDA: herramientas para comparar nombres entre SVGs y shapefiles"
+description = "Comparar nombres de archivos SVG con atributos de shapefiles."
 readme = "README.md"
-requires-python = ">=3.7"
-authors = [{ name = "Xboster-eliel" }]
+authors = [
+  { name = "TU NOMBRE", email = "tu.email@ejemplo.com" }         # TODO
+]
 license = { text = "MIT" }
+requires-python = ">=3.9"
+
+dependencies = [
+  "geopandas>=0.14",
+  "pandas>=2.2",
+  "fiona>=1.9",
+  "shapely>=2.0",
+  "click>=8"            # solo si más adelante incluyes CLI
+]
 
 [project.urls]
-"Repository" = "https://github.com/Xboster-eliel/EDA"
+Homepage = "https://github.com/TU-USUARIO/TU-REPO"               # TODO
+Issues   = "https://github.com/TU-USUARIO/TU-REPO/issues"
 
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
+[tool.setuptools]
+package-dir = { "" = "src" }     # ← cámbialo si renombras 'src/'
+packages = ["compare_names_folder_vs_shape"]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# Opcional: agrégale una CLI más tarde.
+# [project.scripts]
+# compare-svg-vs-shape = "compare_names_folder_vs_shape.cli:main"
+
