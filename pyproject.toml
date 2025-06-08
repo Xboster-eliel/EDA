@@ -1,0 +1,15 @@
+[project]
+name = "EDA"
+version = "0.1.0"
+description = "Librería EDA: herramientas para comparar nombres entre SVGs y shapefiles"
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [{ name = "Xboster-eliel" }]
+license = { text = "MIT" }
+
+[project.urls]
+"Repository" = "https://github.com/Xboster-eliel/EDA"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
