@@ -3,37 +3,29 @@ requires = ["setuptools>=67", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "compare-names-folder-vs-shape"          # 🛈 publicado en PyPI/GitHub
+name = "compare-names-folder-vs-shape"
 version = "0.1.0"
 description = "Comparar nombres de archivos SVG con atributos de shapefiles."
 readme = "README.md"
-authors = [
-  { name = "TU NOMBRE", email = "tu.email@ejemplo.com" }         # TODO
-]
+authors = [{ name = "Tu Nombre", email = "tu@email.com" }]
 license = { text = "MIT" }
 requires-python = ">=3.9"
-
 dependencies = [
   "geopandas>=0.14",
   "pandas>=2.2",
   "fiona>=1.9",
-  "shapely>=2.0",
-  "click>=8"            # solo si más adelante incluyes CLI
+  "shapely>=2.0"
 ]
 
 [project.urls]
-Homepage = "https://github.com/TU-USUARIO/TU-REPO"               # TODO
-Issues   = "https://github.com/TU-USUARIO/TU-REPO/issues"
+Homepage = "https://github.com/Xboster-eliel/EDA"
+Issues   = "https://github.com/Xboster-eliel/EDA/issues"
 
 [tool.setuptools]
-package-dir = { "" = "src" }     # ← cámbialo si renombras 'src/'
-packages = ["compare_names_folder_vs_shape"]
-include-package-data = true
+package-dir = { "" = "src" }           # Cambia "src" si renombraste la carpeta
 
 [tool.setuptools.packages.find]
-where = ["src"]
-
-# Opcional: agrégale una CLI más tarde.
-# [project.scripts]
-# compare-svg-vs-shape = "compare_names_folder_vs_shape.cli:main"
+where = ["src"]                        # <-- único bloque, sin duplicados
+include = ["compare_names_folder_vs_shape*"]
+exclude = ["tests*"]
 
